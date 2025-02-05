@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tranquloo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>مرحبًا بك في متجر tranquloo</h1>
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#search">بحث</a>
+            <a href="#login" id="loginButton">تسجيل الدخول / إنشاء حساب</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>الكتب المتاحة</h2>
+        <div class="book-list">
+            <div class="book-item" data-book="رحلتي من الشك الى الايمان">
+                <p>رحلتي من الشك الى الايمان</p>
+                <button class="buy-button">شراء</button>
+            </div>
+            <div class="book-item" data-book="لغز الموت">
+                <p>لغز الموت</p>
+                <button class="buy-button">شراء</button>
+            </div>
+            <div class="book-item" data-book="العنكبوت">
+                <p>العنكبوت</p>
+                <button class="buy-button">شراء</button>
+            </div>
+            <div class="book-item" data-book="حوار مع صديقي الملحد">
+                <p>حوار مع صديقي الملحد</p>
+                <button class="buy-button">شراء</button>
+            </div>
+            <div class="book-item" data-book="المسيخ الدجال">
+                <p>المسيخ الدجال</p>
+                <button class="buy-button">شراء</button>
+            </div>
+            <div class="book-item" data-book="الشيطان يسكن في بيتنا">
+                <p>الشيطان يسكن في بيتنا</p>
+                <button class="buy-button">شراء</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="search">
+        <h2>البحث عن الكتب</h2>
+        <input type="text" id="searchBox" placeholder="أدخل اسم الكتاب">
+        <div id="searchResults"></div>
+    </section>
+
+    <!-- نافذة إدخال معلومات Mastercard -->
+    <div id="paymentModal" style="display: none;">
+        <h3>أدخل معلومات Mastercard</h3>
+        <form id="paymentForm">
+            <label for="cardNumber">رقم البطاقة:</label>
+            <input type="text" id="cardNumber" required><br>
+            <label for="expiryDate">تاريخ الانتهاء:</label>
+            <input type="text" id="expiryDate" required><br>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" required><br>
+            <button type="submit">إتمام الدفع</button>
+        </form>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
